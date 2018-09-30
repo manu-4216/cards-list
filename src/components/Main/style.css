@@ -1,3 +1,6 @@
 .Main h2 {
-  font-size: 110%;
+  font-size: 90%;
+  font-weight: 200;
+  text-transform: uppercase;
+  margin-top: 1.5em;
 }
