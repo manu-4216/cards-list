@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './style.css'
 import Steps from '../Steps'
 import Step from '../Steps/Step'
-import { IntroForm } from '../StepContent'
+import { IntroForm, CardsSelection } from '../StepContent'
 
 class Main extends Component {
   render() {
@@ -13,7 +13,9 @@ class Main extends Component {
           <Step>
             <IntroForm />
           </Step>
-          <Step>2. Choose your card(s)</Step>
+          <Step>
+            <CardsSelection />
+          </Step>
           <Step>3. Finish your order</Step>
         </Steps>
       </main>

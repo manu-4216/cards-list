@@ -22,21 +22,15 @@ class IntroForm extends Component {
     const { employement, annualIncome } = this.state
 
     return (
-      <p>
+      <div>
         <div className="StepContent-title">1. Basic Information</div>
         <form>
           <label>
             Employment Status:
             <select value={employement} onChange={this.handleEmploymentChange}>
-              <option value="employed" selected={employement === 'employed'}>
-                Employed
-              </option>
-              <option value="part_time" selected={employement === 'part_time'}>
-                Part Time Employed
-              </option>
-              <option value="student" selected={employement === 'student'}>
-                Student
-              </option>
+              <option value="employed">Employed</option>
+              <option value="part_time">Part Time Employed</option>
+              <option value="student">Student</option>
             </select>
           </label>
 
@@ -49,7 +43,7 @@ class IntroForm extends Component {
             />
           </label>
         </form>
-      </p>
+      </div>
     )
   }
 }

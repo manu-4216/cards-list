@@ -3,6 +3,10 @@ label {
   display: block;
 }
 
+select {
+  cursor: pointer;
+}
+
 input,
 select {
   display: block;
@@ -17,6 +21,25 @@ select {
 
 .StepContent-title {
   color: #714d0a;
-  margin: 2em 0 2em;
+  margin: 1em 0 2em;
   text-transform: uppercase;
+}
+
+.Cards {
+  display: flex;
+}
+
+.CardItem {
+  background: #f9f5f5;
+  min-width: 300px;
+  display: inline-block;
+  border: 1px solid #f38106;
+  border-radius: 3px;
+  margin: 0.5em;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.CardItem:hover {
+  background: #fff0ea;
 }

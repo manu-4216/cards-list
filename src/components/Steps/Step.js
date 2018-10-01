@@ -5,7 +5,7 @@ const Step = ({ children, step, nrSteps }) => (
   <StepsContext.Consumer>
     {context => (
       <section className={context.activeStep !== step ? 'hidden' : ''}>
-        <p>{children}</p>
+        <div>{children}</div>
 
         <button
           className={step === 1 ? 'hidden' : 'Step-button'}
