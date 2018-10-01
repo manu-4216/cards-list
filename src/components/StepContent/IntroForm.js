@@ -2,24 +2,27 @@ import React, { Component } from 'react'
 
 class IntroForm extends Component {
   state = {
-    employement: '',
-    annualIncome: ''
+    employment: '',
+    annualIncome: 0
   }
 
-  handleEmploymentChange = event => {
+  handleChange = name => event => {
     this.setState({
-      employement: event.target.value
+      [name]: event.target.value
     })
   }
 
-  handleAnnualIncomeChange = event => {
-    this.setState({
-      annualIncome: event.target.value
-    })
+  componentDidUpdate(prevProps, prevState) {
+    if (
+      prevState.employment !== this.state.employment ||
+      prevState.annualIncome !== this.state.annualIncome
+    ) {
+      this.props.updateSharedState(this.state)
+    }
   }
 
   render() {
-    const { employement, annualIncome } = this.state
+    const { employment, annualIncome } = this.state
 
     return (
       <div>
@@ -27,7 +30,10 @@ class IntroForm extends Component {
         <form>
           <label>
             Employment Status:
-            <select value={employement} onChange={this.handleEmploymentChange}>
+            <select
+              value={employment}
+              onChange={this.handleChange('employment')}
+            >
               <option value="employed">Employed</option>
               <option value="part_time">Part Time Employed</option>
               <option value="student">Student</option>
@@ -38,8 +44,8 @@ class IntroForm extends Component {
             Annual Income (£):
             <input
               type="text"
-              onChange={this.handleAnnualIncomeChange}
               value={annualIncome}
+              onChange={this.handleChange('annualIncome')}
             />
           </label>
         </form>

@@ -38,6 +38,35 @@ class CardsSelection extends Component {
       .reduce((acc, curr) => acc + curr.creditAvailable, 0)
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.selectedCards.length !== this.state.selectedCards.length) {
+      this.props.updateSharedState(this.state)
+    }
+  }
+
+  getEligible = card => {
+    debugger
+    const { sharedState } = this.props
+    let allowed = true
+
+    card.restrictions.forEach(restriction => {
+      switch (restriction.operator) {
+        case 'EQ':
+          if (sharedState[restriction.field] !== restriction.value) {
+            allowed = false
+          }
+          break
+        case 'GT':
+          if ((sharedState[restriction.field] || 0) < +restriction.value) {
+            allowed = false
+          }
+          break
+      }
+    })
+
+    return allowed
+  }
+
   render() {
     const { cards, selectedCards } = this.state
 
@@ -51,9 +80,9 @@ class CardsSelection extends Component {
       <div>
         <div className="StepContent-title">2. Choose your card</div>
         <form>
-          <label>Available cards:</label>
+          <label>Select one or more cards:</label>
           <ul className="CardList">
-            {cards.map(card => (
+            {cards.filter(this.getEligible.bind(this)).map(card => (
               <span
                 key={card.id}
                 className={getClass(selectedCards.includes(card.id))}

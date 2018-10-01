@@ -4,8 +4,8 @@ const cards = [
     id: 1,
     restrictions: [
       {
-        type: 'employement',
-        operation: 'EQ',
+        field: 'employment',
+        operator: 'EQ',
         value: 'student'
       }
     ],
@@ -28,8 +28,8 @@ const cards = [
     id: 3,
     restrictions: [
       {
-        type: 'income',
-        operation: 'GT',
+        field: 'annualIncome',
+        operator: 'GT',
         value: '16000'
       }
     ],
