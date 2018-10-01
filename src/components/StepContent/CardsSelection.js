@@ -75,6 +75,14 @@ class CardsSelection extends Component {
       return selected ? baseClass + ' selected' : baseClass
     }
 
+    // Get some random card colors with gradient
+    const getBackground = id => {
+      return {
+        background: `linear-gradient(135deg, rgb(164, 186, ${100 +
+          50 * id}) 0%, rgb(206, 216, ${120 + 50 * id}) 100%)`
+      }
+    }
+
     return (
       <div>
         <div className="StepContent-title">2. Choose your card</div>
@@ -86,19 +94,20 @@ class CardsSelection extends Component {
                 key={card.id}
                 className={getClass(selectedCards.includes(card.id))}
                 onClick={this.handleSelect(card.id)}
+                style={getBackground(card.id)}
               >
                 <div className="CardItem-title">{card.name}</div>
                 <div className="CardItem-details">
-                  <div>Apr: {card.apr}%</div>
-                  <div>
+                  <li>Apr: {card.apr}%</li>
+                  <li>
                     Balance Transfer Offer Duration:{' '}
                     {card.balTransferDurationMonths} months
-                  </div>
-                  <div>
+                  </li>
+                  <li>
                     Purchase Offer Duration: {card.purchaseDurationMonths}{' '}
                     months
-                  </div>
-                  <div>Credit Available: {card.creditAvailable}£</div>
+                  </li>
+                  <li>Credit Available: {card.creditAvailable}£</li>
                 </div>
               </span>
             ))}

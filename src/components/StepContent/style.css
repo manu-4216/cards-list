@@ -43,7 +43,8 @@ select {
   cursor: pointer;
   text-align: left;
   font-size: 80%;
-  background: #f5f5f5;
+  background: #e0e1ea;
+  box-shadow: 1px 1px 6px -1px #848484;
 }
 
 @media screen and (min-width: 1100px) {
@@ -57,28 +58,37 @@ select {
 }
 
 .CardItem:hover {
-  border: 1px solid #f38106;
+  border: 1px solid #393e7d;
   box-sizing: content-box;
-  box-shadow: 1px 2px 4px #848484;
 }
 
 .CardItem.selected {
   align-self: center;
-  border: 1px solid #f38106;
-  background: #fff6f3;
   padding: 1.5em 1em 3em;
+  border: 1px solid #9e9e9e;
+  background: #bcbfdc;
 }
 
 .CardItem-title {
   font-size: 120%;
   text-transform: uppercase;
-  color: #714d0a;
+  color: #252524;
+}
+
+.CardItem.selected .CardItem-title {
+  color: #b9b8b0;
+  text-shadow: 1px 1px #131313;
 }
 
 .CardItem .CardItem-details {
+  color: #3c2014;
   opacity: 0;
   display: none;
   transition: opacity 0.3s ease;
+}
+
+.CardItem .CardItem-details li {
+  margin-left: 2em;
 }
 
 .CardItem.selected .CardItem-details {
