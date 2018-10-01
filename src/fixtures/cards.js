@@ -1,6 +1,7 @@
 const cards = [
   {
     name: 'Student Life Card',
+    id: 1,
     restrictions: [
       {
         type: 'employement',
@@ -15,6 +16,7 @@ const cards = [
   },
   {
     name: 'Anywhere Card',
+    id: 2,
     restrictions: [],
     apr: '33.9',
     balTransferDurationMonths: 0,
@@ -23,6 +25,7 @@ const cards = [
   },
   {
     name: 'Liquid Card',
+    id: 3,
     restrictions: [
       {
         type: 'income',

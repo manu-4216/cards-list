@@ -25,21 +25,53 @@ select {
   text-transform: uppercase;
 }
 
-.Cards {
+.CardList {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .CardItem {
-  background: #f9f5f5;
+  align-self: start;
   min-width: 300px;
   display: inline-block;
-  border: 1px solid #f38106;
+  border: 1px solid #969696;
   border-radius: 3px;
   margin: 0.5em;
   padding: 1em;
   cursor: pointer;
+  text-align: left;
+  font-size: 80%;
 }
 
 .CardItem:hover {
-  background: #fff0ea;
+  border: 1px solid #f38106;
+  box-sizing: content-box;
+  box-shadow: 1px 2px 4px #848484;
+}
+
+.CardItem.selected {
+  border: 1px solid #f38106;
+  background: #fff6f3;
+}
+
+.CardItem-title {
+  font-size: 120%;
+  text-transform: uppercase;
+  color: #714d0a;
+}
+
+.CardItem .CardItem-details {
+  margin-bottom: 1em;
+  display: none;
+}
+
+.CardItem.selected .CardItem-details {
+  display: block;
+}
+
+.CardList-selection-result {
+  width: 100%;
+  margin-top: 1em;
+  font-size: 90%;
 }
