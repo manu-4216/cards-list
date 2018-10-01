@@ -1,0 +1,22 @@
+label {
+  margin-top: 1.5em;
+  display: block;
+}
+
+input,
+select {
+  display: block;
+  margin: 0.4em auto;
+  height: 2em;
+  border-radius: 3px;
+  padding: 0 5px;
+  border: 1px solid black;
+  outline: none;
+  background: #f5f5f5;
+}
+
+.StepContent-title {
+  color: #714d0a;
+  margin: 2em 0 2em;
+  text-transform: uppercase;
+}

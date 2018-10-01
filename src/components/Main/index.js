@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './style.css'
 import Steps from '../Steps'
 import Step from '../Steps/Step'
+import { IntroForm } from '../StepContent'
 
 class Main extends Component {
   render() {
@@ -9,7 +10,9 @@ class Main extends Component {
       <main className="Main">
         <h2>Get your credit card in 3 quick steps:</h2>
         <Steps>
-          <Step>1. Basic Information</Step>
+          <Step>
+            <IntroForm />
+          </Step>
           <Step>2. Choose your card(s)</Step>
           <Step>3. Finish your order</Step>
         </Steps>

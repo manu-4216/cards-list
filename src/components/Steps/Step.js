@@ -1,6 +1,5 @@
 import React from 'react'
 import { StepsContext } from './index.js'
-import './style.css'
 
 const Step = ({ children, step, nrSteps }) => (
   <StepsContext.Consumer>
