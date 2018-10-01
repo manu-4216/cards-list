@@ -16,6 +16,8 @@ class Main extends Component {
   }
 
   render() {
+    const { sharedState } = this.state
+
     return (
       <main className="Main">
         <h2>Get your credit card in 3 quick steps:</h2>
@@ -23,17 +25,17 @@ class Main extends Component {
           <Step>
             <IntroForm
               updateSharedState={this.updateSharedState}
-              sharedState={this.state.sharedState}
+              sharedState={sharedState}
             />
           </Step>
           <Step>
             <CardsSelection
               updateSharedState={this.updateSharedState}
-              sharedState={this.state.sharedState}
+              sharedState={sharedState}
             />
           </Step>
           <Step>
-            <OrderCard sharedState={this.state.sharedState} />
+            <OrderCard sharedState={sharedState} />
           </Step>
         </Steps>
       </main>
