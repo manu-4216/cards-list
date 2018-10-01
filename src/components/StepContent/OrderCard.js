@@ -16,10 +16,12 @@ class OrderCard extends Component {
 
   render() {
     const { firstName, lastName, dateOfBirth, postcode } = this.state
+    const { selectedCards } = this.props.sharedState
 
     return (
       <div>
         <div className="StepContent-title">3. Finish your order</div>
+        <div>{(selectedCards && selectedCards.length) || 0} cards selected</div>
         <form>
           <div className="Group-form">
             <label>

@@ -45,7 +45,6 @@ class CardsSelection extends Component {
   }
 
   getEligible = card => {
-    debugger
     const { sharedState } = this.props
     let allowed = true
 
