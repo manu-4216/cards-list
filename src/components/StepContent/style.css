@@ -92,3 +92,12 @@ select {
   margin-top: 1em;
   font-size: 90%;
 }
+
+.Group-form label {
+  margin-right: 1em;
+  margin-top: 0;
+}
+
+.Group-form {
+  margin-top: 2em;
+}

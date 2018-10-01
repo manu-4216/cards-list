@@ -2,64 +2,64 @@ import React, { Component } from 'react'
 
 class OrderCard extends Component {
   state = {
-    employement: '',
-    annualIncome: ''
+    firstName: '',
+    lastName: '',
+    dateOfBirth: '',
+    postcode: ''
   }
 
-  handleEmploymentChange = event => {
+  handleChange = name => event => {
     this.setState({
-      employement: event.target.value
-    })
-  }
-
-  handleAnnualIncomeChange = event => {
-    this.setState({
-      annualIncome: event.target.value
+      [name]: event.target.value
     })
   }
 
   render() {
-    const { employement, annualIncome } = this.state
+    const { firstName, lastName, dateOfBirth, postcode } = this.state
 
     return (
       <div>
         <div className="StepContent-title">3. Finish your order</div>
         <form>
-          <label>
-            First name:
-            <input
-              type="text"
-              onChange={this.handleAnnualIncomeChange}
-              value={annualIncome}
-            />
-          </label>
+          <div className="Group-form">
+            <label>
+              First name:
+              <input
+                type="text"
+                value={firstName}
+                onChange={this.handleChange('firstName')}
+              />
+            </label>
 
-          <label>
-            Last name:
-            <input
-              type="text"
-              onChange={this.handleAnnualIncomeChange}
-              value={annualIncome}
-            />
-          </label>
+            <label>
+              Last name:
+              <input
+                type="text"
+                value={lastName}
+                onChange={this.handleChange('lastName')}
+              />
+            </label>
+          </div>
 
-          <label>
-            Date of birth:
-            <input
-              type="text"
-              onChange={this.handleAnnualIncomeChange}
-              value={annualIncome}
-            />
-          </label>
+          <div className="Group-form">
+            <label>
+              Date of birth:
+              <input
+                type="text"
+                value={dateOfBirth}
+                onChange={this.handleChange('dateOfBirth')}
+              />
+            </label>
 
-          <label>
-            Postcode:
-            <input
-              type="text"
-              onChange={this.handleAnnualIncomeChange}
-              value={annualIncome}
-            />
-          </label>
+            <label>
+              Postcode:
+              <input
+                type="text"
+                value={postcode}
+                onChange={this.handleChange('postcode')}
+              />
+            </label>
+          </div>
         </form>
       </div>
     )
