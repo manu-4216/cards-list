@@ -74,13 +74,13 @@ class CardsSelection extends Component {
                 </div>
               </span>
             ))}
-            {selectedCards.length > 0 && (
-              <div className="CardList-selection-result">
-                <div>Cards selected: {selectedCards.length}</div>
-                <div>Total Credit Available: {this.getTotalCredit()}</div>
-              </div>
-            )}
           </ul>
+          {selectedCards.length > 0 && (
+            <div className="CardList-selection-result">
+              <div>Cards selected: {selectedCards.length}</div>
+              <div>Total Credit Available: {this.getTotalCredit()}</div>
+            </div>
+          )}
         </form>
       </div>
     )

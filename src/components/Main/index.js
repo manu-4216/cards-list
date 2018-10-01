@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './style.css'
 import Steps from '../Steps'
 import Step from '../Steps/Step'
-import { IntroForm, CardsSelection } from '../StepContent'
+import { IntroForm, CardsSelection, OrderCard } from '../StepContent'
 
 class Main extends Component {
   render() {
@@ -16,7 +16,9 @@ class Main extends Component {
           <Step>
             <CardsSelection />
           </Step>
-          <Step>3. Finish your order</Step>
+          <Step>
+            <OrderCard />
+          </Step>
         </Steps>
       </main>
     )
