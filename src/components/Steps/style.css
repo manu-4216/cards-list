@@ -43,3 +43,7 @@ button:hover {
   color: white;
   font-weight: bold;
 }
+
+.Step {
+  margin-bottom: 1em;
+}
