@@ -69,18 +69,10 @@ class CardsSelection extends Component {
   render() {
     const { cards, selectedCards } = this.state
 
-    const getClass = selected => {
-      const baseClass = 'CardItem'
+    const getClass = (id, selected) => {
+      const baseClass = 'CardItem Color' + id
 
       return selected ? baseClass + ' selected' : baseClass
-    }
-
-    // Get some random card colors with gradient
-    const getBackground = id => {
-      return {
-        background: `linear-gradient(135deg, rgb(164, 186, ${100 +
-          50 * id}) 0%, rgb(206, 216, ${120 + 50 * id}) 100%)`
-      }
     }
 
     return (
@@ -92,9 +84,8 @@ class CardsSelection extends Component {
             {cards.filter(this.getEligible.bind(this)).map(card => (
               <span
                 key={card.id}
-                className={getClass(selectedCards.includes(card.id))}
+                className={getClass(card.id, selectedCards.includes(card.id))}
                 onClick={this.handleSelect(card.id)}
-                style={getBackground(card.id)}
               >
                 <div className="CardItem-title">{card.name}</div>
                 <div className="CardItem-details">
@@ -115,7 +106,7 @@ class CardsSelection extends Component {
           {selectedCards.length > 0 && (
             <div className="CardList-selection-result">
               <div>Cards selected: {selectedCards.length}</div>
-              <div>Total Credit Available: {this.getTotalCredit()}</div>
+              <div>Total Credit Available: {this.getTotalCredit()}£</div>
             </div>
           )}
         </form>

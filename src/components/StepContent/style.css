@@ -43,7 +43,7 @@ select {
   cursor: pointer;
   text-align: left;
   font-size: 80%;
-  background: #e0e1ea;
+  background: #efeff1;
   box-shadow: 1px 1px 6px -1px #848484;
 }
 
@@ -69,14 +69,39 @@ select {
   background: #bcbfdc;
 }
 
+.CardItem.selected.Color1,
+.CardItem.Color1:hover {
+  background: linear-gradient(
+    135deg,
+    rgb(164, 186, 200) 0%,
+    rgb(206, 216, 200) 100%
+  );
+}
+.CardItem.selected.Color2,
+.CardItem.Color2:hover {
+  background: linear-gradient(
+    135deg,
+    rgb(174, 194, 230) 0%,
+    rgb(209, 216, 243) 100%
+  );
+}
+.CardItem.selected.Color3,
+.CardItem.Color3:hover {
+  background: linear-gradient(
+    135deg,
+    rgb(222, 201, 141) 0%,
+    rgb(239, 234, 198) 100%
+  );
+}
+
 .CardItem-title {
   font-size: 120%;
   text-transform: uppercase;
-  color: #252524;
+  color: #757570;
 }
 
 .CardItem.selected .CardItem-title {
-  color: #b9b8b0;
+  color: #cac495;
   text-shadow: 1px 1px #131313;
 }
 

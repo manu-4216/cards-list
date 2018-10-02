@@ -18,6 +18,7 @@ button {
   text-transform: uppercase;
   border: 1px solid #5f4e33;
   background: white;
+  width: 100px;
 }
 
 .Step-button:hover {
